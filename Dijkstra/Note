@@ -1,1 +1,6 @@
 Solved by using Dijkstra algorithm
+
+Dijkstra
+  1. 원하는 Node 에서 다른 Node 들로 가는 최단거리를 구한다.
+  2. 음의 간선이 없어야 한다.
+  3. 우선순위큐 (Priority queue) 사용.
