@@ -1,1 +1,5 @@
 Solved by using Topological sort
+
+위상정렬(Topological sort)
+  1. 각 노드들에 대해서 inDegree의 개수와 outDegree에 해당되는 노드들을 파악.
+  2. inDegree의 개수가 0인 노드들을 보일 때 마다 queue에 삽입.
