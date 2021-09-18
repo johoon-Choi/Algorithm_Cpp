@@ -74,8 +74,8 @@ bool isSafe(int row, int col) {
 void dfs(vector<string>& board, int row, int col, Node* curNode) {
 	isVisited[row][col] = true;
 
-	if (curNode->isEnd && (curNode->isUsed == false)) { // ÀÌ ³ëµå¸¦ ¸¶Áö¸·À¸·Î ´Ü¾î ÇÏ³ª°¡ »ý¼ºÀÌ µÇ¾úÀ¸¸é¼­
-														//   ÇÑ¹øµµ Ã£Áö ¸ø Çß´ø ´Ü¾îÀÏ ¶§
+	if (curNode->isEnd && (curNode->isUsed == false)) { // ì´ ë…¸ë“œë¥¼ ë§ˆì§€ë§‰ìœ¼ë¡œ ë‹¨ì–´ í•˜ë‚˜ê°€ ìƒì„±ì´ ë˜ì—ˆìœ¼ë©´ì„œ
+														//   í•œë²ˆë„ ì°¾ì§€ ëª» í–ˆë˜ ë‹¨ì–´ì¼ ë•Œ
 		curNode->isUsed = true;
 		string word = curNode->thisWord;
 
@@ -90,7 +90,7 @@ void dfs(vector<string>& board, int row, int col, Node* curNode) {
 		int nR = row + dR[d];
 		int nC = col + dC[d];
 
-		if (isSafe(nR, nC)) { // ´ÙÀ½µµ ¾ÈÀüÇÒ ¶§
+		if (isSafe(nR, nC)) { // ë‹¤ìŒë„ ì•ˆì „í•  ë•Œ
 			if (!isVisited[nR][nC] && curNode->child[board[nR][nC] - 'A'] != NULL)
 				dfs(board, nR, nC, curNode->child[board[nR][nC] - 'A']);
 		}
@@ -139,7 +139,7 @@ int main() {
 		TriList->resetIsEndAndIsUsed(TriList->root);
 	}
 
-	for (int i = 0; i < ans.size(); i++) {
+	for (int i = 0; i < ans.size(); i++) { 
 		cout << ans[i].maxScore << ' ' << ans[i].longestWord << ' ' << ans[i].numCount << '\n';
 	}
 }
