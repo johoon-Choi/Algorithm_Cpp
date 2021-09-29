@@ -5,7 +5,7 @@
 #define ground -1
 #define row first
 #define col second
-
+ 
 using namespace std;
 typedef pair<int, int> pii;
 typedef pair<int, char> pic;
@@ -21,7 +21,7 @@ struct SNAKE {
 
 struct comp {
 	bool operator()(SNAKE A, SNAKE B) {
-		return A.time > B.time; // ½Ã°£ÀÌ ÀÛÀº ¾êµé ¸ÕÀú ºüÁöµµ·Ï
+		return A.time > B.time; // ì‹œê°„ì´ ì‘ì€ ì–˜ë“¤ ë¨¼ì € ë¹ ì§€ë„ë¡
 	}
 };
 
@@ -42,20 +42,20 @@ bool isSafe(int r, int c) {
 }
 
 int solve(int r, int c, int dir, int tm) {
-	if (s.count({ r, c })) return tm; // ¸ö°ú ´ê¾Ò´Ù¸é End
-	if (!isSafe(r, c)) return tm; // º®°ú ´ê¾Ò´Ù¸é End
+	if (s.count({ r, c })) return tm; // ëª¸ê³¼ ë‹¿ì•˜ë‹¤ë©´ End
+	if (!isSafe(r, c)) return tm; // ë²½ê³¼ ë‹¿ì•˜ë‹¤ë©´ End
 
 	int nextDir = dir;
 
-	if (board[r][c] == ground) { // »ç°ú°¡ ¾øÀ¸¹Ç·Î ²¿¸®¸¦ ÁÙÀÎ´Ù.
+	if (board[r][c] == ground) { // ì‚¬ê³¼ê°€ ì—†ìœ¼ë¯€ë¡œ ê¼¬ë¦¬ë¥¼ ì¤„ì¸ë‹¤.
 		SNAKE cur = pq.top();
 		s.erase(s.find({ cur.r, cur.c }));
 		pq.pop();
 	}
 	else if (board[r][c] == 1) board[r][c] = ground;
-	// »ç°ú°¡ ÀÖÀ¸¹Ç·Î, ²¿¸®¸¦ ÁÙÀÌÁö ¾Ê°í »ç°ú¸¦ ¸Ô´Â´Ù(¾ø¾Ø´Ù).
+	// ì‚¬ê³¼ê°€ ìˆìœ¼ë¯€ë¡œ, ê¼¬ë¦¬ë¥¼ ì¤„ì´ì§€ ì•Šê³  ì‚¬ê³¼ë¥¼ ë¨¹ëŠ”ë‹¤(ì—†ì•¤ë‹¤).
 
-	s.insert({ r, c }); // ÇöÀç À§Ä¡·Î ¹ìÀ» ´Ã¸°´Ù.
+	s.insert({ r, c }); // í˜„ì¬ ìœ„ì¹˜ë¡œ ë±€ì„ ëŠ˜ë¦°ë‹¤.
 	pq.push({ r, c, tm });
 
 	if (!check.empty() && tm == check.top().first){
@@ -83,7 +83,7 @@ int main() {
 	for (int i = 0; i < apple; i++) {
 		cin >> r >> c;
 
-		board[r][c] = 1; // »ç°ú°¡ ÀÖ´Â À§Ä¡¸¦ 1·Î ÃÊ±âÈ­
+		board[r][c] = 1; // ì‚¬ê³¼ê°€ ìˆëŠ” ìœ„ì¹˜ë¥¼ 1ë¡œ ì´ˆê¸°í™”
 	}
 
 	cin >> snake;
@@ -95,8 +95,8 @@ int main() {
 		check.push({ t, dr });
 	}
 
-	s.insert({ 1, 1 }); // Ãâ¹ßÁöÁ¡¿¡ ¹ìÀ» µĞ´Ù.
-	pq.push({ 1, 1, 0 }); // Ãâ¹ßÁöÁ¡À» pq¿¡ push ÇÑ´Ù.
+	s.insert({ 1, 1 }); // ì¶œë°œì§€ì ì— ë±€ì„ ë‘”ë‹¤.
+	pq.push({ 1, 1, 0 }); // ì¶œë°œì§€ì ì„ pqì— push í•œë‹¤.
 
 	cout << solve(1, 2, Right, 1);
 }
