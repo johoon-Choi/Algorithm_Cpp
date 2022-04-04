@@ -1,5 +1,4 @@
-
-#Cpp_Algorithm
+<h1>Cpp_Algorithm</h1>
 
 **Algorithm study!**
 
