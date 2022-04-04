@@ -1,5 +1,5 @@
 # Cpp_Algorithm
-**Algorithm study!
+**Algorithm study!**
 
 PS URL
 1. BOJ : https://www.acmicpc.net/
