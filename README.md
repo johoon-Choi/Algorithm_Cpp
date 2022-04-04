@@ -1,6 +1,5 @@
 #Cpp_Algorithm
-
-<span style='color:#fff5b1'>Algorithm study!</span>
+**Algorithm study!**
 
 PS URL
 1. BOJ : https://www.acmicpc.net/
