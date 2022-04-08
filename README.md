@@ -1,8 +1,4 @@
-<h1>Cpp_Algorithm</h1>
+Im studying Algorithm by using C++ language.
 
-Algorithm study!
-
-#PS URL
-
-1. BOJ : https://www.acmicpc.net/
-2. Programmers : https://programmers.co.kr/
+1. [BOJ](https://www.acmicpc.net/)
+2. [Programmers](https://programmers.co.kr/)
