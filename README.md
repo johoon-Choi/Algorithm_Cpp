@@ -1,8 +1,8 @@
 <h1>Cpp_Algorithm</h1>
 
-**Algorithm study!**
+Algorithm study!
 
-PS URL
+#PS URL
 
 1. BOJ : https://www.acmicpc.net/
 2. Programmers : https://programmers.co.kr/
