@@ -1,4 +1,4 @@
-Im studying Algorithm by using C++ language.
+Studying Algorithm by using C++ language.
 
 <h2>Using site</h2>
 
